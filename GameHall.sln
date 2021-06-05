@@ -1,0 +1,141 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{137C71B0-4DCE-40D1-B662-75E61BF30E7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.FrontEnd.Console", "GameHall.FrontEnd.Console\GameHall.FrontEnd.Console.csproj", "{BFBAAD87-921C-454A-837E-6668F5383B32}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserManagement", "UserManagement", "{7CB7A15E-3883-4FF6-86E8-45927A41077D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.UserManagement.Service", "GameHall.UserManagement.Service\GameHall.UserManagement.Service.csproj", "{88A11E6A-8C58-43EE-ACC4-39C3C7B70597}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.UserManagement.Domain", "GameHall.UserManagement.Domain\GameHall.UserManagement.Domain.csproj", "{BBC9F825-46AF-4145-8522-B185B935BAE1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.UserManagement.ApplicationServices", "GameHall.UserManagement.ApplicationServices\GameHall.UserManagement.ApplicationServices.csproj", "{CEF9B4AA-A6D0-4836-AE31-3CCD9866DEBD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.UserManagement.Infrastructure", "GameHall.UserManagement.Infrastructure\GameHall.UserManagement.Infrastructure.csproj", "{4B9B5420-0361-48D6-8E8C-C888709E038A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoinManagement", "CoinManagement", "{997EA794-43BE-49CA-A4FE-CC8C978A99B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.CoinManagement.Domain", "GameHall.CoinManagement.Domain\GameHall.CoinManagement.Domain.csproj", "{CE748586-ED53-4C90-AC63-00675EEABB9D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.CoinManagement.Infrastructure", "GameHall.CoinManagement.Infrastructure\GameHall.CoinManagement.Infrastructure.csproj", "{7004BF25-7681-4424-9CBE-57DC9D99260A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.CoinManagement.ApplicationServices", "GameHall.CoinManagement.ApplicationServices\GameHall.CoinManagement.ApplicationServices.csproj", "{08CAE8C2-CEA3-4624-9AA0-CD003C32362F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.CoinManagement.Service", "GameHall.CoinManagement.Service\GameHall.CoinManagement.Service.csproj", "{634817A1-61E2-4A99-9451-F5F9C6217117}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_SharedKernel", "_SharedKernel", "{63C94001-4C60-478B-9CB3-9D0A5B3F3C58}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.SharedKernel.Core", "GameHall.SharedKernel.Core\GameHall.SharedKernel.Core.csproj", "{322A4FDD-D77D-4EEA-B6EE-353756B9636D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.SharedKernel.Infrastructure", "GameHall.SharedKernel.Infrastructure\GameHall.SharedKernel.Infrastructure.csproj", "{FA20C29C-1934-4390-8F03-28CB0B25B83D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.FrontEnd.Domain", "GameHall.FrontEnd.Domain\GameHall.FrontEnd.Domain.csproj", "{2F5DE021-427B-4D30-A65A-93135012F775}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHall.UserManagement.Tests", "GameHall.UserManagement.Tests\GameHall.UserManagement.Tests.csproj", "{D89F4E2E-7A2F-4639-BF86-D41035404A26}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.FrontEnd.ApplicationServices", "GameHall.FrontEnd.ApplicationServices\GameHall.FrontEnd.ApplicationServices.csproj", "{BC0C94AA-3B69-45AE-827E-0B9CBAC36AB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHall.FrontEnd.Tests", "GameHall.FrontEnd.Tests\GameHall.FrontEnd.Tests.csproj", "{032D34B5-9ECC-4B79-BCAF-EFADD55F5110}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHall.CoinManagement.Tests", "GameHall.CoinManagement.Tests\GameHall.CoinManagement.Tests.csproj", "{BDBC0A5E-5A8D-455E-A6E2-E9FE02B13EFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFBAAD87-921C-454A-837E-6668F5383B32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFBAAD87-921C-454A-837E-6668F5383B32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFBAAD87-921C-454A-837E-6668F5383B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFBAAD87-921C-454A-837E-6668F5383B32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88A11E6A-8C58-43EE-ACC4-39C3C7B70597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88A11E6A-8C58-43EE-ACC4-39C3C7B70597}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88A11E6A-8C58-43EE-ACC4-39C3C7B70597}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88A11E6A-8C58-43EE-ACC4-39C3C7B70597}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBC9F825-46AF-4145-8522-B185B935BAE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBC9F825-46AF-4145-8522-B185B935BAE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBC9F825-46AF-4145-8522-B185B935BAE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBC9F825-46AF-4145-8522-B185B935BAE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEF9B4AA-A6D0-4836-AE31-3CCD9866DEBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEF9B4AA-A6D0-4836-AE31-3CCD9866DEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEF9B4AA-A6D0-4836-AE31-3CCD9866DEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEF9B4AA-A6D0-4836-AE31-3CCD9866DEBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B9B5420-0361-48D6-8E8C-C888709E038A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B9B5420-0361-48D6-8E8C-C888709E038A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B9B5420-0361-48D6-8E8C-C888709E038A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B9B5420-0361-48D6-8E8C-C888709E038A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE748586-ED53-4C90-AC63-00675EEABB9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE748586-ED53-4C90-AC63-00675EEABB9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE748586-ED53-4C90-AC63-00675EEABB9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE748586-ED53-4C90-AC63-00675EEABB9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7004BF25-7681-4424-9CBE-57DC9D99260A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7004BF25-7681-4424-9CBE-57DC9D99260A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7004BF25-7681-4424-9CBE-57DC9D99260A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7004BF25-7681-4424-9CBE-57DC9D99260A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08CAE8C2-CEA3-4624-9AA0-CD003C32362F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08CAE8C2-CEA3-4624-9AA0-CD003C32362F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08CAE8C2-CEA3-4624-9AA0-CD003C32362F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08CAE8C2-CEA3-4624-9AA0-CD003C32362F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{634817A1-61E2-4A99-9451-F5F9C6217117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{634817A1-61E2-4A99-9451-F5F9C6217117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{634817A1-61E2-4A99-9451-F5F9C6217117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{634817A1-61E2-4A99-9451-F5F9C6217117}.Release|Any CPU.Build.0 = Release|Any CPU
+		{322A4FDD-D77D-4EEA-B6EE-353756B9636D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{322A4FDD-D77D-4EEA-B6EE-353756B9636D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{322A4FDD-D77D-4EEA-B6EE-353756B9636D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{322A4FDD-D77D-4EEA-B6EE-353756B9636D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA20C29C-1934-4390-8F03-28CB0B25B83D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA20C29C-1934-4390-8F03-28CB0B25B83D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA20C29C-1934-4390-8F03-28CB0B25B83D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA20C29C-1934-4390-8F03-28CB0B25B83D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F5DE021-427B-4D30-A65A-93135012F775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F5DE021-427B-4D30-A65A-93135012F775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F5DE021-427B-4D30-A65A-93135012F775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F5DE021-427B-4D30-A65A-93135012F775}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D89F4E2E-7A2F-4639-BF86-D41035404A26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D89F4E2E-7A2F-4639-BF86-D41035404A26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D89F4E2E-7A2F-4639-BF86-D41035404A26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D89F4E2E-7A2F-4639-BF86-D41035404A26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC0C94AA-3B69-45AE-827E-0B9CBAC36AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC0C94AA-3B69-45AE-827E-0B9CBAC36AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC0C94AA-3B69-45AE-827E-0B9CBAC36AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC0C94AA-3B69-45AE-827E-0B9CBAC36AB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{032D34B5-9ECC-4B79-BCAF-EFADD55F5110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{032D34B5-9ECC-4B79-BCAF-EFADD55F5110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{032D34B5-9ECC-4B79-BCAF-EFADD55F5110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{032D34B5-9ECC-4B79-BCAF-EFADD55F5110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDBC0A5E-5A8D-455E-A6E2-E9FE02B13EFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDBC0A5E-5A8D-455E-A6E2-E9FE02B13EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDBC0A5E-5A8D-455E-A6E2-E9FE02B13EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDBC0A5E-5A8D-455E-A6E2-E9FE02B13EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BFBAAD87-921C-454A-837E-6668F5383B32} = {137C71B0-4DCE-40D1-B662-75E61BF30E7D}
+		{88A11E6A-8C58-43EE-ACC4-39C3C7B70597} = {7CB7A15E-3883-4FF6-86E8-45927A41077D}
+		{BBC9F825-46AF-4145-8522-B185B935BAE1} = {7CB7A15E-3883-4FF6-86E8-45927A41077D}
+		{CEF9B4AA-A6D0-4836-AE31-3CCD9866DEBD} = {7CB7A15E-3883-4FF6-86E8-45927A41077D}
+		{4B9B5420-0361-48D6-8E8C-C888709E038A} = {7CB7A15E-3883-4FF6-86E8-45927A41077D}
+		{CE748586-ED53-4C90-AC63-00675EEABB9D} = {997EA794-43BE-49CA-A4FE-CC8C978A99B7}
+		{7004BF25-7681-4424-9CBE-57DC9D99260A} = {997EA794-43BE-49CA-A4FE-CC8C978A99B7}
+		{08CAE8C2-CEA3-4624-9AA0-CD003C32362F} = {997EA794-43BE-49CA-A4FE-CC8C978A99B7}
+		{634817A1-61E2-4A99-9451-F5F9C6217117} = {997EA794-43BE-49CA-A4FE-CC8C978A99B7}
+		{322A4FDD-D77D-4EEA-B6EE-353756B9636D} = {63C94001-4C60-478B-9CB3-9D0A5B3F3C58}
+		{FA20C29C-1934-4390-8F03-28CB0B25B83D} = {63C94001-4C60-478B-9CB3-9D0A5B3F3C58}
+		{2F5DE021-427B-4D30-A65A-93135012F775} = {137C71B0-4DCE-40D1-B662-75E61BF30E7D}
+		{D89F4E2E-7A2F-4639-BF86-D41035404A26} = {7CB7A15E-3883-4FF6-86E8-45927A41077D}
+		{BC0C94AA-3B69-45AE-827E-0B9CBAC36AB4} = {137C71B0-4DCE-40D1-B662-75E61BF30E7D}
+		{032D34B5-9ECC-4B79-BCAF-EFADD55F5110} = {137C71B0-4DCE-40D1-B662-75E61BF30E7D}
+		{BDBC0A5E-5A8D-455E-A6E2-E9FE02B13EFD} = {997EA794-43BE-49CA-A4FE-CC8C978A99B7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {289AEB66-5141-4254-9E7F-0B15DB3632D8}
+	EndGlobalSection
+EndGlobal
