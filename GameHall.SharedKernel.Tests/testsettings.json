@@ -1,0 +1,27 @@
+﻿{
+  "REDCapConnection": {
+    "AccessToken": "809195CE361F63DBABE78D0D9B3C9047",
+    "HostUrl": "https://redcap.au.dk/api/",
+    "Timeout": -1,
+    "DataAccessGroup": 1
+  },
+  "RabbitMq": {
+    "HostName": "127.0.0.1",
+    "Port": "5672",
+    "UserName": "guest",
+    "Password": "guest"
+  },
+  "RabbitMqExchange": {
+    "Type": "direct",
+    "Durable": true,
+    "AutoDelete": false,
+    "DeadLetterExchange": "default.dlx.exchange",
+    "RequeueFailedMessages": true,
+    "Queues": [
+      {
+        "Name": "myqueue",
+        "RoutingKeys": [ "routing.key" ]
+      }
+    ]
+  }
+}

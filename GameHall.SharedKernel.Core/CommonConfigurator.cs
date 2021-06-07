@@ -6,7 +6,6 @@ namespace GameHall.SharedKernel.Core
     {
         public static void Configure(IServiceCollection serviceCollection)
         {
-            //serviceCollection.AddScoped<ICommandPublisher, CommandPublisher>();
         }
     }
 }

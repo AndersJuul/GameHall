@@ -8,6 +8,7 @@ namespace GameHall.SharedKernel.Infrastructure.CommandHandling
         public static void Configure(IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped<ICommandPublisher, CommandPublisher>();
+            serviceCollection.AddScoped<ICommandSubscriber, CommandSubscriber>();
         }
     }
 }

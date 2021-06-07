@@ -1,4 +1,4 @@
-﻿namespace GameHall.SharedKernel.Infrastructure.CommandHandling
+﻿namespace GameHall.SharedKernel.Core
 {
     public interface ICommandSubscriber
     {

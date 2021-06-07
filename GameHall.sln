@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHall.FrontEnd.Tests", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHall.CoinManagement.Tests", "GameHall.CoinManagement.Tests\GameHall.CoinManagement.Tests.csproj", "{BDBC0A5E-5A8D-455E-A6E2-E9FE02B13EFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHall.SharedKernel.Tests", "GameHall.SharedKernel.Tests\GameHall.SharedKernel.Tests.csproj", "{25AEB3AC-27BB-45E8-8376-1EE97A11F68E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,10 @@ Global
 		{BDBC0A5E-5A8D-455E-A6E2-E9FE02B13EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDBC0A5E-5A8D-455E-A6E2-E9FE02B13EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDBC0A5E-5A8D-455E-A6E2-E9FE02B13EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25AEB3AC-27BB-45E8-8376-1EE97A11F68E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25AEB3AC-27BB-45E8-8376-1EE97A11F68E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25AEB3AC-27BB-45E8-8376-1EE97A11F68E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25AEB3AC-27BB-45E8-8376-1EE97A11F68E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,6 +140,7 @@ Global
 		{BC0C94AA-3B69-45AE-827E-0B9CBAC36AB4} = {137C71B0-4DCE-40D1-B662-75E61BF30E7D}
 		{032D34B5-9ECC-4B79-BCAF-EFADD55F5110} = {137C71B0-4DCE-40D1-B662-75E61BF30E7D}
 		{BDBC0A5E-5A8D-455E-A6E2-E9FE02B13EFD} = {997EA794-43BE-49CA-A4FE-CC8C978A99B7}
+		{25AEB3AC-27BB-45E8-8376-1EE97A11F68E} = {63C94001-4C60-478B-9CB3-9D0A5B3F3C58}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {289AEB66-5141-4254-9E7F-0B15DB3632D8}

@@ -1,4 +1,5 @@
-﻿using RabbitMQ.Client.Core.DependencyInjection.Services;
+﻿using GameHall.SharedKernel.Core;
+using RabbitMQ.Client.Core.DependencyInjection.Services;
 
 namespace GameHall.SharedKernel.Infrastructure.CommandHandling
 {

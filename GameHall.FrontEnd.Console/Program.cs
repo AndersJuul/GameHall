@@ -16,7 +16,6 @@ namespace GameHall.FrontEnd.Console
             System.Console.WriteLine("Hello World!");
 
             var builder = new ConfigurationBuilder()
-                //.SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", false, true);
             var configuration = builder.Build();
 
@@ -27,7 +26,6 @@ namespace GameHall.FrontEnd.Console
             SharedKernel.Infrastructure.DataStorage.CommonConfigurator.Configure(serviceCollection);
             UserManagement.ApplicationServices.CommonConfigurator.Configure(serviceCollection);
 
-            //ApplicationServices.CommonConfigurator.Configure(serviceCollection);
             CommonConfigurator.Configure(serviceCollection, configuration);
 
             var serviceProvider = serviceCollection.BuildServiceProvider();
