@@ -29,6 +29,7 @@ namespace GameHall.SharedKernel.Tests.IntegrationTests.CommandHandling
             var commandPublisher = serviceProvider.GetRequiredService<ICommandPublisher>();
 
             var commandSubscriber = serviceProvider.GetRequiredService<ICommandSubscriber>();
+            commandSubscriber.
 
             commandPublisher.Publish(new CreateUser(Guid.NewGuid(), "anders"));
 
