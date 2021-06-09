@@ -6,12 +6,10 @@ namespace GameHall.FrontEnd.ApplicationServices
 {
     public class UserManager:IUserManager
     {
-        private readonly ICommandPublisher _commandPublisher;
         private readonly IRepository _repository;
 
-        public UserManager(ICommandPublisher commandPublisher, IRepository repository )
+        public UserManager(IRepository repository )
         {
-            _commandPublisher = commandPublisher;
             _repository = repository;
         }
 
@@ -32,9 +30,6 @@ namespace GameHall.FrontEnd.ApplicationServices
     {
         public Task Login(Guid sessionId)
         {
-            //await _commandPublisher
-            //    .Publish(new UserRequestLogin(sessionId, userName));
-            //Events.Add(new UserLoggedInDomainEvent(this.Id, sessionId));            
             return Task.CompletedTask;
         }
     }

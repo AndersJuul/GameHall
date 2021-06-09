@@ -1,6 +1,11 @@
 ﻿<SolutionConfiguration>
   <Settings>
     <AllowParallelTestExecution>True</AllowParallelTestExecution>
+    <MetricsExclusionList>
+      <Value>GameHall.CoinManagement.Tests\GameHall.CoinManagement.Tests.csproj</Value>
+      <Value>GameHall.SharedKernel.Tests\GameHall.SharedKernel.Tests.csproj</Value>
+      <Value>GameHall.UserManagement.Tests\GameHall.UserManagement.Tests.csproj</Value>
+    </MetricsExclusionList>
     <SolutionConfigured>True</SolutionConfigured>
   </Settings>
 </SolutionConfiguration>

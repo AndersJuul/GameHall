@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ardalis.ApiEndpoints" Version="3.1.0" />
+    <PackageReference Include="EasyNetQ" Version="6.3.1" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="8.4.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GameHall.SharedKernel.Core\GameHall.SharedKernel.Core.csproj" />
+    <ProjectReference Include="..\GameHall.SharedKernel.Infrastructure\GameHall.SharedKernel.Infrastructure.csproj" />
+    <ProjectReference Include="..\GameHall.UserManagement.ApplicationServices\GameHall.UserManagement.ApplicationServices.csproj" />
+  </ItemGroup>
+
+</Project>

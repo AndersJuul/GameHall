@@ -50,6 +50,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_docker", "_docker", "{36CD
 		docker-compose.yaml = docker-compose.yaml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHall.FrontEnd.WebApi", "GameHall.FrontEnd.WebApi\GameHall.FrontEnd.WebApi.csproj", "{EABB4C83-249A-4C45-A332-A37DE54F01E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -124,6 +126,10 @@ Global
 		{25AEB3AC-27BB-45E8-8376-1EE97A11F68E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25AEB3AC-27BB-45E8-8376-1EE97A11F68E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25AEB3AC-27BB-45E8-8376-1EE97A11F68E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EABB4C83-249A-4C45-A332-A37DE54F01E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EABB4C83-249A-4C45-A332-A37DE54F01E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EABB4C83-249A-4C45-A332-A37DE54F01E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EABB4C83-249A-4C45-A332-A37DE54F01E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,6 +152,7 @@ Global
 		{032D34B5-9ECC-4B79-BCAF-EFADD55F5110} = {137C71B0-4DCE-40D1-B662-75E61BF30E7D}
 		{BDBC0A5E-5A8D-455E-A6E2-E9FE02B13EFD} = {997EA794-43BE-49CA-A4FE-CC8C978A99B7}
 		{25AEB3AC-27BB-45E8-8376-1EE97A11F68E} = {63C94001-4C60-478B-9CB3-9D0A5B3F3C58}
+		{EABB4C83-249A-4C45-A332-A37DE54F01E4} = {137C71B0-4DCE-40D1-B662-75E61BF30E7D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {289AEB66-5141-4254-9E7F-0B15DB3632D8}
