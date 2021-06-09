@@ -1,21 +1,19 @@
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using EasyNetQ;
 using GameHall.SharedKernel.Core.Commands;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace GameHall.UserManagement.Service
 {
-    public class Worker : BackgroundService
+    public class CreateUserHandler : BackgroundService
     {
-        private readonly ILogger<Worker> _logger;
         private readonly IBus _bus;
+        private readonly ILogger<CreateUserHandler> _logger;
 
-        public Worker(ILogger<Worker> logger,IBus bus)
+        public CreateUserHandler(ILogger<CreateUserHandler> logger, IBus bus)
         {
             _logger = logger;
             _bus = bus;
@@ -24,12 +22,13 @@ namespace GameHall.UserManagement.Service
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             var commandSubscriber = await _bus.PubSub.SubscribeAsync<CreateUser>("",
-                msg =>
-                {
-                });
+                msg => { }, stoppingToken);
+            
+            _logger.LogInformation("CreateUserHandler started at: {time}", DateTimeOffset.Now);
+
             while (!stoppingToken.IsCancellationRequested)
             {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+                _logger.LogInformation("CreateUserHandler running at: {time}", DateTimeOffset.Now);
                 await Task.Delay(1000, stoppingToken);
             }
         }

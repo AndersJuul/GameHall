@@ -35,15 +35,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.SharedKernel.Infra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.FrontEnd.Domain", "GameHall.FrontEnd.Domain\GameHall.FrontEnd.Domain.csproj", "{2F5DE021-427B-4D30-A65A-93135012F775}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHall.UserManagement.Tests", "GameHall.UserManagement.Tests\GameHall.UserManagement.Tests.csproj", "{D89F4E2E-7A2F-4639-BF86-D41035404A26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.UserManagement.Tests", "GameHall.UserManagement.Tests\GameHall.UserManagement.Tests.csproj", "{D89F4E2E-7A2F-4639-BF86-D41035404A26}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.FrontEnd.ApplicationServices", "GameHall.FrontEnd.ApplicationServices\GameHall.FrontEnd.ApplicationServices.csproj", "{BC0C94AA-3B69-45AE-827E-0B9CBAC36AB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHall.FrontEnd.Tests", "GameHall.FrontEnd.Tests\GameHall.FrontEnd.Tests.csproj", "{032D34B5-9ECC-4B79-BCAF-EFADD55F5110}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.FrontEnd.Tests", "GameHall.FrontEnd.Tests\GameHall.FrontEnd.Tests.csproj", "{032D34B5-9ECC-4B79-BCAF-EFADD55F5110}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHall.CoinManagement.Tests", "GameHall.CoinManagement.Tests\GameHall.CoinManagement.Tests.csproj", "{BDBC0A5E-5A8D-455E-A6E2-E9FE02B13EFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.CoinManagement.Tests", "GameHall.CoinManagement.Tests\GameHall.CoinManagement.Tests.csproj", "{BDBC0A5E-5A8D-455E-A6E2-E9FE02B13EFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHall.SharedKernel.Tests", "GameHall.SharedKernel.Tests\GameHall.SharedKernel.Tests.csproj", "{25AEB3AC-27BB-45E8-8376-1EE97A11F68E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHall.SharedKernel.Tests", "GameHall.SharedKernel.Tests\GameHall.SharedKernel.Tests.csproj", "{25AEB3AC-27BB-45E8-8376-1EE97A11F68E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_docker", "_docker", "{36CDA9D6-569B-4904-853F-D4251C7EB1C7}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yaml = docker-compose.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

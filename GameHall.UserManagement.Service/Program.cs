@@ -22,8 +22,8 @@ namespace GameHall.UserManagement.Service
                     //SharedKernel.Infrastructure.DataStorage.CommonConfigurator.Configure(serviceCollection);
                     //UserManagement.ApplicationServices.CommonConfigurator.Configure(serviceCollection);
 
-                    //CommonConfiguratorum.Configure(serviceCollection,hostContext.Configuration);
-                    CommonConfiguratorum.Configure(services);
+                    //CommonConfigurator.Configure(serviceCollection,hostContext.Configuration);
+                    CommonConfigurator.Configure(services);
                 });
 
     }
