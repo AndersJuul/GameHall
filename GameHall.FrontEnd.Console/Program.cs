@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
+using EasyNetQ;
 using GameHall.SharedKernel.Core;
+using GameHall.SharedKernel.Core.Commands;
 using GameHall.UserManagement.ApplicationServices;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,12 +39,13 @@ namespace GameHall.FrontEnd.Console
                 .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200")))
                 .CreateLogger();
 
+            await Task.Delay(3000);
+
             var userService = serviceProvider.GetRequiredService<IUserService>();
 
-
-
-            var userId = Guid.NewGuid();
-            await userService.CreateUser(userId, "aju");
+            var commandPublisher = serviceProvider.GetRequiredService<IBus>();
+            await commandPublisher.PubSub.PublishAsync(new CreateUser(Guid.NewGuid(), "aju"));
+            await Task.Delay(3000);
         }
     }
 }

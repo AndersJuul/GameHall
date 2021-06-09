@@ -1,7 +1,8 @@
 using System;
-using GameHall.SharedKernel.Core;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using EasyNetQ;
 using GameHall.SharedKernel.Core.Commands;
-using GameHall.SharedKernel.Infrastructure.CommandHandling;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
@@ -12,7 +13,7 @@ namespace GameHall.SharedKernel.Tests.IntegrationTests.CommandHandling
     public class CommandHandlingPocTests
     {
         [Fact]
-        public void ThatPublishedCommandsArePickedUpByConsumer()
+        public async Task ThatPublishedCommandsArePickedUpByConsumer()
         {
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("testsettings.json", false, true);
@@ -25,15 +26,59 @@ namespace GameHall.SharedKernel.Tests.IntegrationTests.CommandHandling
             SharedKernel.Infrastructure.DataStorage.CommonConfigurator.Configure(serviceCollection);
             UserManagement.ApplicationServices.CommonConfigurator.Configure(serviceCollection);
             FrontEnd.Console.CommonConfigurator.Configure(serviceCollection,configuration);
+            //serviceCollection.AddTransient<DummyCommandHandler>();
+
             var serviceProvider = serviceCollection.BuildServiceProvider();
-            var commandPublisher = serviceProvider.GetRequiredService<ICommandPublisher>();
+            var bus = serviceProvider.GetRequiredService<IBus>();
 
-            var commandSubscriber = serviceProvider.GetRequiredService<ICommandSubscriber>();
-            commandSubscriber.
+            var called = false;
+            var commandSubscriber = await bus.PubSub.SubscribeAsync<DummyCommand>("",
+                msg =>
+                {
+                    called = true;
+                });
 
-            commandPublisher.Publish(new CreateUser(Guid.NewGuid(), "anders"));
+            await bus.PubSub.PublishAsync(new DummyCommand(Guid.NewGuid(), "anders"));
+            //serviceProvider.GetRequiredService<ICapPublisher<DummyCommand>>();
+            //commandSubscriber.Register(c =>
+            //{
+            //    Console.WriteLine("");
+            //}, this);
+            //var sub = new DummyCommandHandler();
+            //await commandPublisher.PublishAsync(nameof(DummyCommand),new DummyCommand(Guid.NewGuid(), "anders"));
+
+            //Assert.Single(sub.HandledCommands);
+            await Task.Delay(4000);
+            //Assert.True(called);
+        }
+    }
+
+    //public class DummyCommandHandler:ICapSubscribe
+    //{
+    //    public DummyCommandHandler()
+    //    {
+    //        HandledCommands = new List<ICommand>();
+    //    }
+
+    //    [CapSubscribe(nameof(DummyCommand))]
+    //    public void Handle(DummyCommand dummyCommand)
+    //    {
+    //        HandledCommands.Add(dummyCommand);
+    //    }
+
+    //    public List<ICommand> HandledCommands { get; set; }
+    //}
 
 
+    public class DummyCommand : ICommand
+    {
+        public Guid Id { get; }
+        public string Name { get; }
+
+        public DummyCommand(Guid id, string name)
+        {
+            Id = id;
+            Name = name;
         }
     }
 }

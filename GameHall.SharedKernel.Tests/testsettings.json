@@ -16,12 +16,6 @@
     "Durable": true,
     "AutoDelete": false,
     "DeadLetterExchange": "default.dlx.exchange",
-    "RequeueFailedMessages": true,
-    "Queues": [
-      {
-        "Name": "myqueue",
-        "RoutingKeys": [ "routing.key" ]
-      }
-    ]
+    "RequeueFailedMessages": true
   }
 }
