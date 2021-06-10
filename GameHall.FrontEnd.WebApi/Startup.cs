@@ -4,8 +4,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using Serilog.Events;
 using Serilog.Sinks.Elasticsearch;
 
 namespace GameHall.FrontEnd.WebApi
@@ -34,6 +36,8 @@ namespace GameHall.FrontEnd.WebApi
 
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                .Enrich.FromLogContext()
                 .WriteTo.Console()
                 .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200")))
                 .CreateLogger();
@@ -47,7 +51,7 @@ namespace GameHall.FrontEnd.WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
         {
             if (env.IsDevelopment())
             {
@@ -63,6 +67,8 @@ namespace GameHall.FrontEnd.WebApi
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+
+            logger.LogInformation("Started!");
         }
     }
 }

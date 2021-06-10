@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 
 namespace GameHall.FrontEnd.WebApi
 {
@@ -7,7 +8,10 @@ namespace GameHall.FrontEnd.WebApi
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            CreateHostBuilder(args)
+                .UseSerilog()
+                .Build()
+                .Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args)
