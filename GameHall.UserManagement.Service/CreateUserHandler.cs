@@ -1,37 +1,28 @@
 using System;
-using System.Threading;
 using System.Threading.Tasks;
 using EasyNetQ;
 using GameHall.SharedKernel.Core.Commands;
-using Microsoft.Extensions.Hosting;
+using GameHall.UserManagement.ApplicationServices;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace GameHall.UserManagement.Service
 {
-    public class CreateUserHandler : BackgroundService
+    public class CreateUserHandler : SharedKernel.Infrastructure.EventHandler<CreateUser>
     {
-        private readonly IBus _bus;
-        private readonly ILogger<CreateUserHandler> _logger;
+        private readonly IServiceProvider _serviceProvider;
 
-        public CreateUserHandler(ILogger<CreateUserHandler> logger, IBus bus)
+        public CreateUserHandler(ILogger<CreateUserHandler> logger, IBus bus, IServiceProvider serviceProvider) :
+            base(logger, bus)
         {
-            _logger = logger;
-            _bus = bus;
+            _serviceProvider = serviceProvider;
         }
 
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        public override async Task OnMessage(CreateUser msg)
         {
-            var commandSubscriber = await _bus.PubSub.SubscribeAsync<CreateUser>("",
-                msg => { }, stoppingToken);
-            
-            _logger.LogInformation("CreateUserHandler started at: {time}", DateTimeOffset.Now);
-
-            while (!stoppingToken.IsCancellationRequested)
-            {
-                _logger.LogInformation("CreateUserHandler running at: {time}", DateTimeOffset.Now);
-                await Task.Delay(1000, stoppingToken);
-            }
-            
+            Logger.LogInformation("Handling message: {msg}",msg);
+            var createUserService = _serviceProvider.GetRequiredService<ICreateUserService>();
+            await createUserService.CreateUser(msg.Id, msg.Name);
         }
     }
 }

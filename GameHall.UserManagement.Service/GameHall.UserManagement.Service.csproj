@@ -12,5 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GameHall.SharedKernel.Core\GameHall.SharedKernel.Core.csproj" />
+    <ProjectReference Include="..\GameHall.SharedKernel.Infrastructure\GameHall.SharedKernel.Infrastructure.csproj" />
+    <ProjectReference Include="..\GameHall.UserManagement.ApplicationServices\GameHall.UserManagement.ApplicationServices.csproj" />
   </ItemGroup>
 </Project>

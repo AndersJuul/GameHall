@@ -24,7 +24,7 @@ namespace GameHall.SharedKernel.Tests.IntegrationTests.CommandHandling
             SharedKernel.Core.CommonConfigurator.Configure(serviceCollection);
             SharedKernel.Infrastructure.CommandHandling.CommonConfigurator.Configure(serviceCollection);
             SharedKernel.Infrastructure.DataStorage.CommonConfigurator.Configure(serviceCollection);
-            UserManagement.ApplicationServices.CommonConfigurator.Configure(serviceCollection);
+            UserManagement.ApplicationServices.CommonConfiguratorxxxxxxx.Configure(serviceCollection);
             FrontEnd.Console.CommonConfigurator.Configure(serviceCollection,configuration);
             //serviceCollection.AddTransient<DummyCommandHandler>();
 

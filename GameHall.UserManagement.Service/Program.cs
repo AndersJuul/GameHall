@@ -1,6 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using GameHall.SharedKernel.Core;
 
 namespace GameHall.UserManagement.Service
 {
@@ -11,20 +10,18 @@ namespace GameHall.UserManagement.Service
             CreateHostBuilder(args).Build().Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        public static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            return Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
                     var serviceCollection = new ServiceCollection();
 
                     SharedKernel.Core.CommonConfigurator.Configure(serviceCollection);
-                    //SharedKernel.Infrastructure.CommandHandling.CommonConfigurator.Configure(serviceCollection);
-                    //SharedKernel.Infrastructure.DataStorage.CommonConfigurator.Configure(serviceCollection);
-                    //UserManagement.ApplicationServices.CommonConfigurator.Configure(serviceCollection);
+                    ApplicationServices.CommonConfiguratorxxxxxxx.Configure(serviceCollection);
 
-                    //CommonConfigurator.Configure(serviceCollection,hostContext.Configuration);
                     CommonConfigurator.Configure(services);
                 });
-
+        }
     }
 }

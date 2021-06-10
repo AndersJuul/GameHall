@@ -30,7 +30,7 @@ namespace GameHall.FrontEnd.WebApi
             SharedKernel.Core.CommonConfigurator.Configure(services);
             SharedKernel.Infrastructure.CommandHandling.CommonConfigurator.Configure(services);
             SharedKernel.Infrastructure.DataStorage.CommonConfigurator.Configure(services);
-            UserManagement.ApplicationServices.CommonConfigurator.Configure(services);
+            UserManagement.ApplicationServices.CommonConfiguratorxxxxxxx.Configure(services);
             CommonConfigurator.Configure(services);
 
             Log.Logger = new LoggerConfiguration()

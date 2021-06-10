@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Ardalis.ApiEndpoints;
+using Ardalis.GuardClauses;
 using EasyNetQ;
 using GameHall.SharedKernel.Core.Commands;
 using Microsoft.AspNetCore.Mvc;
@@ -29,7 +30,10 @@ namespace GameHall.FrontEnd.WebApi.Endpoints.User
         ]
         public override async Task<ActionResult<CreateUserResponse>> HandleAsync(CreateUserRequest request, CancellationToken cancellationToken = new CancellationToken())
         {
-            await _bus.PubSub.PublishAsync(new CreateUser(Guid.NewGuid(), "aju"));
+            Guard.Against.NullOrEmpty(request.UserName, nameof(request.UserName));
+            Guard.Against.NullOrEmpty(request.UserId, nameof(request.UserId));
+
+            await _bus.PubSub.PublishAsync(new CreateUser(request.UserId, request.UserName));
             return  Ok(new CreateUserResponse());
         }
     }
@@ -40,5 +44,7 @@ namespace GameHall.FrontEnd.WebApi.Endpoints.User
 
     public class CreateUserRequest
     {
+        public Guid UserId { get; set; }
+        public string UserName { get; set; }
     }
 }

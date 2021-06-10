@@ -22,7 +22,7 @@ namespace GameHall.FrontEnd.Console
             SharedKernel.Core.CommonConfigurator.Configure(serviceCollection);
             SharedKernel.Infrastructure.CommandHandling.CommonConfigurator.Configure(serviceCollection);
             SharedKernel.Infrastructure.DataStorage.CommonConfigurator.Configure(serviceCollection);
-            UserManagement.ApplicationServices.CommonConfigurator.Configure(serviceCollection);
+            UserManagement.ApplicationServices.CommonConfiguratorxxxxxxx.Configure(serviceCollection);
 
             CommonConfigurator.Configure(serviceCollection, configuration);
 

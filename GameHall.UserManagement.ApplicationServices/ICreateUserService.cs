@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace GameHall.UserManagement.ApplicationServices
 {
-    public interface IUserService
+    public interface ICreateUserService
     {
         Task CreateUser(Guid userId, string userName);
     }
