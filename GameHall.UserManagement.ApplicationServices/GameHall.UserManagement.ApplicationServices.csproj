@@ -8,4 +8,9 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GameHall.SharedKernel.Core\GameHall.SharedKernel.Core.csproj" />
+    <ProjectReference Include="..\GameHall.UserManagement.Domain\GameHall.UserManagement.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

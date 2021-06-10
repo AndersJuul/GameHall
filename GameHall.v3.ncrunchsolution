@@ -8,6 +8,9 @@
       <Value>CommonConfigurator.cs:GameHall.FrontEnd.WebApi\GameHall.FrontEnd.WebApi.csproj</Value>
       <Value>Program.cs:GameHall.FrontEnd.WebApi\GameHall.FrontEnd.WebApi.csproj</Value>
       <Value>Startup.cs:GameHall.FrontEnd.WebApi\GameHall.FrontEnd.WebApi.csproj</Value>
+      <Value>CommonConfigurator.cs:GameHall.UserManagement.Service\GameHall.UserManagement.Service.csproj</Value>
+      <Value>Program.cs:GameHall.UserManagement.Service\GameHall.UserManagement.Service.csproj</Value>
+      <Value>CommonConfigurator.cs:GameHall.FrontEnd.ApplicationServices\GameHall.FrontEnd.ApplicationServices.csproj</Value>
     </MetricsExclusionList>
     <SolutionConfigured>True</SolutionConfigured>
   </Settings>
