@@ -5,6 +5,9 @@
       <Value>GameHall.CoinManagement.Tests\GameHall.CoinManagement.Tests.csproj</Value>
       <Value>GameHall.SharedKernel.Tests\GameHall.SharedKernel.Tests.csproj</Value>
       <Value>GameHall.UserManagement.Tests\GameHall.UserManagement.Tests.csproj</Value>
+      <Value>CommonConfigurator.cs:GameHall.FrontEnd.WebApi\GameHall.FrontEnd.WebApi.csproj</Value>
+      <Value>Program.cs:GameHall.FrontEnd.WebApi\GameHall.FrontEnd.WebApi.csproj</Value>
+      <Value>Startup.cs:GameHall.FrontEnd.WebApi\GameHall.FrontEnd.WebApi.csproj</Value>
     </MetricsExclusionList>
     <SolutionConfigured>True</SolutionConfigured>
   </Settings>

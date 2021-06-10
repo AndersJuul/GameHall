@@ -18,7 +18,7 @@ namespace GameHall.UserManagement.Service
                     var serviceCollection = new ServiceCollection();
 
                     SharedKernel.Core.CommonConfigurator.Configure(serviceCollection);
-                    ApplicationServices.CommonConfiguratorxxxxxxx.Configure(serviceCollection);
+                    ApplicationServices.CommonConfigurator.Configure(serviceCollection);
 
                     CommonConfigurator.Configure(services);
                 });

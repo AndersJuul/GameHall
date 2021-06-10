@@ -1,5 +1,4 @@
 using System;
-using GameHall.SharedKernel.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -30,7 +29,7 @@ namespace GameHall.FrontEnd.WebApi
             SharedKernel.Core.CommonConfigurator.Configure(services);
             SharedKernel.Infrastructure.CommandHandling.CommonConfigurator.Configure(services);
             SharedKernel.Infrastructure.DataStorage.CommonConfigurator.Configure(services);
-            UserManagement.ApplicationServices.CommonConfiguratorxxxxxxx.Configure(services);
+            UserManagement.ApplicationServices.CommonConfigurator.Configure(services);
             CommonConfigurator.Configure(services);
 
             Log.Logger = new LoggerConfiguration()

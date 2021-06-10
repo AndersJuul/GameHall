@@ -33,7 +33,7 @@ namespace GameHall.FrontEnd.WebApi.Endpoints.User
             Guard.Against.NullOrEmpty(request.UserName, nameof(request.UserName));
             Guard.Against.NullOrEmpty(request.UserId, nameof(request.UserId));
 
-            await _bus.PubSub.PublishAsync(new CreateUser(request.UserId, request.UserName));
+            await _bus.PubSub.PublishAsync(new CreateUser(request.UserId, request.UserName), cancellationToken);
             return  Ok(new CreateUserResponse());
         }
     }

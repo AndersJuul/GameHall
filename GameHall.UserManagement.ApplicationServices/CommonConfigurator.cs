@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace GameHall.UserManagement.ApplicationServices
 {
-    public static class CommonConfiguratorxxxxxxx
+    public static class CommonConfigurator
     {
         public static void Configure(IServiceCollection serviceCollection)
         {
