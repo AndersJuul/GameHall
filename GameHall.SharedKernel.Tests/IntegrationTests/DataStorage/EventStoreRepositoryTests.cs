@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,15 +12,16 @@ namespace GameHall.SharedKernel.Tests.IntegrationTests.DataStorage
 {
     public class EventStoreRepositoryTests
     {
-        [Fact(Timeout = 20000)]
+        [Fact(Timeout = 10000)]
         public async Task ThatStoredEventsCanBeRehydrated()
         {
             var settings = ConnectionSettings.Create()
                 .KeepReconnecting()
-                .SetGossipTimeout(TimeSpan.FromMilliseconds(500))
+                .SetGossipTimeout(TimeSpan.FromMilliseconds(1500))
                 .SetGossipSeedEndPoints(
                     new IPEndPoint(IPAddress.Loopback, 2113)
                 )
+                .DisableTls()
                 .SetDefaultUserCredentials(new UserCredentials("admin", "changeit"));
             var connection = EventStoreConnection.Create(settings, new IPEndPoint(IPAddress.Loopback, 1113));
             await connection.ConnectAsync();
@@ -35,6 +35,8 @@ namespace GameHall.SharedKernel.Tests.IntegrationTests.DataStorage
                 new FundsWithdrawnEvent(aggregateId, 25),
             };
 
+            var expectedSum = 150 + 100 - 25;
+
             foreach (var ev in list)
             {
                 var json = JsonConvert.SerializeObject(ev,
@@ -44,15 +46,78 @@ namespace GameHall.SharedKernel.Tests.IntegrationTests.DataStorage
                 await connection.AppendToStreamAsync(Infrastructure.DataStorage.EventStore.StreamId(aggregateId),
                     ExpectedVersion.Any, eventStoreDataType);
             }
+
+            var results = await connection.ReadStreamEventsForwardAsync(
+                Infrastructure.DataStorage.EventStore.StreamId(aggregateId), StreamPosition.Start, 999, false);
+
+            var account = new BankAccount();
+            foreach (var result in results.Events)
+            {
+                var esJsonData = Encoding.UTF8.GetString(result.Event.Data);
+                if (result.Event.EventType == "AccountCreatedEvent")
+                {
+                    var obj = JsonConvert.DeserializeObject<AccountCreatedEvent>(esJsonData);
+                    account.Apply(obj);
+                }
+                if (result.Event.EventType == "FundsDepositedEvent")
+                {
+                    var obj = JsonConvert.DeserializeObject<FundsDepositedEvent>(esJsonData);
+                    account.Apply(obj);
+                }
+                if (result.Event.EventType == "FundsWithdrawnEvent")
+                {
+                    var obj = JsonConvert.DeserializeObject<FundsWithdrawnEvent>(esJsonData);
+                    account.Apply(obj);
+                }
+
+            }
+
+            Assert.Equal("Eric", account.Name);
+            Assert.Equal(expectedSum, account.CurrentBalance);
+
         }
+    }
+
+    public class BankAccount
+    {
+        public Guid Id { get; set; }
+
+        public decimal CurrentBalance { get; set; }
+        public List<MoneyTransaction> Transactions { get; set; } = new List<MoneyTransaction>();
+        public string Name { get; set; }
+
+
+        public void Apply(FundsDepositedEvent fundsDepositedEvent)
+        {
+            var item = new MoneyTransaction {Amount = fundsDepositedEvent.Amount};
+            Transactions.Add(item);
+            CurrentBalance += fundsDepositedEvent.Amount;
+        }
+
+        public void Apply(AccountCreatedEvent accountCreatedEvent)
+        {
+            Name = accountCreatedEvent.Name;
+        }
+
+        public void Apply(FundsWithdrawnEvent fundsWithdrawnEvent)
+        {
+            var item = new MoneyTransaction { Amount = fundsWithdrawnEvent.Amount };
+            Transactions.Add(item);
+            CurrentBalance -= fundsWithdrawnEvent.Amount;
+        }
+    }
+
+    public class MoneyTransaction
+    {
+        public decimal Amount { get; set; }
     }
 
     public class FundsWithdrawnEvent : IEvent
     {
         public Guid AggregateId { get; }
-        public int Amount { get; }
+        public decimal Amount { get; }
 
-        public FundsWithdrawnEvent(Guid aggregateId, int amount)
+        public FundsWithdrawnEvent(Guid aggregateId, decimal amount)
         {
             AggregateId = aggregateId;
             Amount = amount;
@@ -62,9 +127,9 @@ namespace GameHall.SharedKernel.Tests.IntegrationTests.DataStorage
     public class FundsDepositedEvent : IEvent
     {
         public Guid AggregateId { get; }
-        public int Amount { get; }
+        public decimal Amount { get; }
 
-        public FundsDepositedEvent(Guid aggregateId, int amount)
+        public FundsDepositedEvent(Guid aggregateId, decimal amount)
         {
             AggregateId = aggregateId;
             Amount = amount;
@@ -82,6 +147,7 @@ namespace GameHall.SharedKernel.Tests.IntegrationTests.DataStorage
             Name = name;
         }
     }
+
 
     public interface IEvent
     {
