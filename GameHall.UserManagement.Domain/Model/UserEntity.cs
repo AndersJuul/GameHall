@@ -2,7 +2,7 @@
 
 namespace GameHall.UserManagement.Domain.Model
 {
-    public class UserEntity : BaseEntity
+    public class UserEntity : BaseAggregateEntity
     {
         public UserEntity(string name)
         {
@@ -11,5 +11,9 @@ namespace GameHall.UserManagement.Domain.Model
         }
 
         public string Name { get; set; }
+        public override void AddEvent(BaseDomainEvent domainEvent)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
